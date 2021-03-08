@@ -1,6 +1,5 @@
-# CLines
-
-Program for calculating the amount of lines in files in a directory
+<h1 style="text-align:center">CLines</h1>
+<p style="text-align:center">Program for calculating the amount of lines in files in a directory</p>
 
 ---
 
@@ -15,6 +14,7 @@ Program for calculating the amount of lines in files in a directory
 - If you set up the program successfully with the setup instructions above, you should now be able to run the program by simply typing `clines` in your terminal.
 - After that, you should see a list of files, and the amount of lines in the file. For more specific information see [examples](#examples) below
 - If you decided not to add the program to path, or the setup failed, you have to type the full path to the `clines.exe` program to use it
+- CLines supports basic filtering, for example if you type `clines /e` the program will display the files, and it's encoding
 
 ###Note
 - The calculation speed depends on the file size in the directory. If a file has more than few thousand lines, the calculation process may take few seconds
@@ -28,6 +28,8 @@ If reading a file failed for some reason, it will be shown in the `AbleToRead` c
 ---
 
 ###Examples
-![example1](.github/example1.png)
-![example2](.github/example2.png)
-![example3](.github/example3.png)
+<p style="text-align:center">
+    <img src=".github/example1.png" alt="Example Image 1">
+    <img src=".github/example2.png" alt="Example Image 2">
+    <img src=".github/example3.png" alt="Example Image 3">
+</p>
