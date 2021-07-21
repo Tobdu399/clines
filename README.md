@@ -1,6 +1,6 @@
 # CLines
 
-Program for calculating the amount of lines in files in a directory
+Python program for calculating the amount of lines in the files found in the current directory
   
 ---  
   
@@ -35,6 +35,6 @@ If reading a file failed for some reason, it will be shown in the `AbleToRead` c
 ---
   
 ### Examples  
-![Example Image 1](".github/example1.png") 
-![Example Image 2](".github/example2.png") 
-![Example Image 3](".github/example3.png")
+![Example Image 1](.github/example1.png) 
+![Example Image 2](.github/example2.png) 
+![Example Image 3](.github/example3.png)
