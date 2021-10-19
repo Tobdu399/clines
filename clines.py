@@ -1,7 +1,7 @@
 import pathlib
 import os
 import threading
-from   lib.progressbar import progressbar
+from lib.progressbar import progressbar
 import colorama
 import time
 import sys
@@ -71,7 +71,8 @@ def clines():
                 summary_and_quit()
             finally:
                 files_read += 1
-                progressbar.progress = (files_read / total_amount_of_files) * 100
+                progressbar.loading_text     = f"{files_read}/{total_amount_of_files}"
+                progressbar.overall_progress = (files_read / total_amount_of_files) * 100
 
         # Read files ----------------------------------------------------
         for current_file in files:
@@ -81,6 +82,8 @@ def clines():
 
             try:
                 with open(current_file, "r", encoding="iso-8859-15") as file:
+                    progressbar.current_progress = 0
+
                     # Update the progressbar "current file" text
                     progressbar.current_process = filename_to_print
 
@@ -94,6 +97,8 @@ def clines():
                         if len(str(line).replace(" ", "").strip("\n")) > 0:
                             nonempty_lines += 1
                         current_line += 1
+
+                        progressbar.current_progress = (current_line / total_lines) * 100
 
                     print(f"\033[36m📄\033[0m {filename_to_print}{' ' * (lines_text_location-(3+len(filename_to_print)+len(str(total_lines))))}{total_lines} {nonempty_lines}")
 
@@ -109,7 +114,8 @@ def clines():
                 summary_and_quit()
             finally:
                 files_read += 1
-                progressbar.progress = (files_read / total_amount_of_files) * 100
+                progressbar.loading_text     = f"{files_read}/{total_amount_of_files}"
+                progressbar.overall_progress = (files_read / total_amount_of_files) * 100
 
         time.sleep(0.5)
         summary_and_quit()
